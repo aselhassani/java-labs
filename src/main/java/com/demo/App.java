@@ -3,15 +3,11 @@ package com.demo;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
-    public static void main( String[] args )
+	public static void main(String[] args)
     {
-		String chars = "Allah is The Greatest";
+		String chars = "Soccer is the best sport";
 		System.out.println(chars);
 		System.out.println(groupCharsByCount(chars));
 	}
@@ -24,13 +20,16 @@ public class App
 
 		for (int i = 0; i < chars.length(); i++) {
 
+			char c = chars.charAt(i);
+
 			// skip spaces
-			if (chars.charAt(i) == ' ')
+			if (c == ' ')
 				continue;
 
 			// this will increment the count
-			int count = result.get(chars.charAt(i)) == null ? 0 : result.get(chars.charAt(i));
-			result.put(chars.charAt(i), ++count);
+			int count = result.containsKey(c) ? 0 : result.get(c);
+
+			result.put(c, ++count);
 		}
 
 		return result;
