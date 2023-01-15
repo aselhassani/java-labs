@@ -26,10 +26,7 @@ public class App
 			if (c == ' ')
 				continue;
 
-			// this will increment the count
-			int count = result.containsKey(c) ? 0 : result.get(c);
-
-			result.put(c, ++count);
+			result.put(c, result.containsKey(c) ? (result.get(c) + 1) : 1);
 		}
 
 		return result;
